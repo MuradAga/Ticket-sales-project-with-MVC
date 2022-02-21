@@ -1,0 +1,52 @@
+﻿body {
+    margin-top: 0px;
+    background-image: url(/img/home_background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+link {
+    asp-append-version ="true"
+}
+
+script {
+    asp-append-version ="true"
+}
+
+img {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    margin: 60px auto;
+    border: 3px solid #5d75fc;
+    box-shadow: 0 10px 20px;
+}
+
+[data-scroll] {
+    opacity: 0;
+    transition: all 1s;
+}
+
+img[data-scroll="in"] {
+    opacity: 1;
+    transform: translateY(-50px);
+}
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #595959;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #0099ff;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #00ccff;
+    }

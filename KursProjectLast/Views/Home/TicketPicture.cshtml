@@ -1,0 +1,130 @@
+﻿@model TicketToListDTO
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%">
+<head>
+	<link rel="stylesheet" href="/css/ReserveTicket/picture.css">
+	    <title>Ticket Picture</title>
+</head>
+
+<body>
+	<div class="print">
+		<h3 style="font-family: sans-serif; color: white">Print ticket 🡿</h3>
+
+<button class="button-79" role="button" onclick="window.print()">Print</button>
+
+	</div>
+<div class="ticket" style="margin-top: -3rem;">
+	<div id="banner">
+		<div id="topbanner"></div>
+		<span id="mainbanner">
+			<img src="https://lukw4l.de/utils/media/assets/flightticket/plane_logo.png">
+			@Model.Flight.Airline.AirlineName
+		</span>
+		<span id="tearoffbanner">
+			<img src="https://lukw4l.de/utils/media/assets/flightticket/plane_logo.png">
+			@Model.Flight.Airline.AirlineName
+		</span>
+	</div>
+	<div id="barcode">
+		@Model.FlightId @Model.PassengerId @Model.Passenger.Name @Model.Passenger.Surname
+	</div>
+	<div id="data">
+		<div id="maindata">
+			<div class="box">
+				<span class="header">
+					Passenger Name
+				</span>
+				<span class="body">
+					@Model.Passenger.Surname @Model.Passenger.Name
+				</span>
+			</div>
+			<div class="box">
+				<span class="header">
+					Flight Number
+				</span>
+				<span class="body">
+					@Model.FlightId
+				</span>
+			</div>
+			<div class="box">
+				<span class="header">
+					From
+				</span>
+				<span class="body">
+					@Model.Flight.From.CityName
+				</span>
+			</div>
+			<div class="box">
+				<span class="header">
+					Date
+				</span>
+				<span class="body">
+					@Model.Flight.Departure.Substring(0, 10);
+				</span>
+			</div>
+			<div class="box">
+				<span class="header">
+					To
+				</span>
+				<span class="body">
+					@Model.Flight.To.CityName
+				</span>
+			</div>
+			<div class="box">
+			</div>
+			<div class="box boarding">
+				<span class="header">
+					Boarding Time
+				</span>
+				<span class="body">
+					@Model.Flight.Departure.Substring(11, 5)
+				</span>
+			</div>
+
+			<div id="tearoffdata">
+				<div class="box">
+					<span class="header">
+						Passenger Name
+					</span>
+					<span class="body">
+					@Model.Passenger.Surname @Model.Passenger.Name
+					</span>
+				</div>
+				<div class="box">
+					<span class="header">
+						Flight Number
+					</span>
+					<span class="body">
+						@Model.FlightId
+					</span>
+				</div>
+				<div class="box">
+					<span class="header">
+						Date
+					</span>
+					<span class="body">
+						@Model.Flight.Departure.Substring(0, 10);
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div id="holes">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+  </body>
+</html>

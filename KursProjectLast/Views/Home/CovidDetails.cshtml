@@ -1,0 +1,108 @@
+﻿@model CovidDetailsViewModel
+
+@{
+	Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corona Live Tracker</title>
+  </head>
+
+	<link rel="stylesheet" href="/css/CovidDetails/CovidDetails.css">
+
+    <script src="/js/CovidDetails/CovidDetails.js" type="text/javascript"></script>
+  <!-- HTML5 file for Corona Tracker markup -->
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+  />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"
+  />
+
+  <!-- icons from Font Awesome Website -->
+  <!-- ref: https://fontawesome.com/icons -->
+
+  <body>
+    <!-- <h1 class="title">Coronavirus (COVID-19) Live Tracker</h1> -->
+    <a class="shower" href="#"> Coronavirus Azerbaijan Live Tracker</a>
+    <div class="container">
+      <!-- Card statistics for infected count -->
+      <div class="card card-stats">
+        <div class="card-body">
+          <div class="color">
+            <h5 class="card-title text-uppercase text-muted">New Cases Today</h5>
+            <span class="h2 font-weight-bold total_cases color-red count"
+              >@Model.Confirmed</span
+            >
+          </div>
+          <div
+            class="icon icon-shape bg-gradient-red text-white rounded-circle shadow"
+          >
+            <i class="fas fa-users"></i>
+          </div>
+        </div>
+      </div>
+      <div class="card card-stats">
+        <!-- Card statistics for death counts -->
+        <div class="card-body">
+          <div class="color">
+            <h5 class="card-title text-uppercase text-muted">New Deaths Today</h5>
+            <span class="h2 font-weight-bold deaths color-blue count">@Model.Deaths</span>
+          </div>
+          <div
+            class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow"
+          >
+            <i class="fas fa-procedures"></i>
+          </div>
+        </div>
+      </div>
+      <div class="card card-stats">
+        <!-- Card statistics for recovered count -->
+        <div class="card-body">
+          <div class="color">
+            <h5 class="card-title text-uppercase text-muted">Total Cases</h5>
+            <span class="h2 font-weight-bold recovered color-green count"
+              >@Model.TotalConfirmed</span
+            >
+          </div>
+          <div
+            class="icon icon-shape bg-gradient-green text-white rounded-circle shadow"
+          >
+            <i class="fas fa-child"></i>
+          </div>
+        </div>
+      </div>
+      <div class="card card-stats">
+        <!-- Card statistics for daily new cases count -->
+        <div class="card-body">
+          <div class="color">
+            <h5 class="card-title text-uppercase text-muted">
+              Total Deaths
+            </h5>
+            <span class="h2 font-weight-bold new_cases color-orange count"
+              >@Model.TotalDeaths</span
+            >
+          </div>
+          <div
+            class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow"
+          >
+            <i class="fas fa-bell"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </body>
+</html>

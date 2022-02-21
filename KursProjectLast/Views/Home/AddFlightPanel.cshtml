@@ -1,0 +1,111 @@
+﻿@model CityAirlineViewModel
+
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+	<!-- Head -->
+	<head>
+
+		<title>Add Flight</title>
+
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+			<meta name="keywords" content="Ferry Booking Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+			<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!-- //Meta-Tags -->
+
+		<!-- Custom-Style-Sheet -->
+			<link rel="stylesheet" href="/css/AddTicket/style.css" type="text/css" media="all">
+			<link rel="stylesheet" href="/css/AddTicket/jquery-ui.css" type="text/css" media="all">
+			<link rel="stylesheet" href="/css/AddTicket/animate-custom.css" type="text/css" media="all">
+		<!-- //Custom-Style-Sheet -->
+
+		<!-- Fonts -->
+			<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"  type="text/css" media="all">
+			<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700"			   type="text/css" media="all">
+		<!-- //Fonts -->
+							<!-- Default-JavaScript --><script type="text/javascript" src="/js/AddTicket/jquery-2.1.4.min.js"></script>
+
+	</head>
+	<!-- //Head -->
+
+	<!-- Body -->
+	<body>
+		<div class="containerw3layouts-agileits">
+
+			<div class="w3layoutscontactagileits">
+				<h2 class="addFlight">Add Flight</h2>
+
+				<section>
+					<div id="container_demo">
+						<div id="wrapper">
+							<form asp-controller="Home" asp-action="AddFlight" method="post">
+								<div id="login" class="animate w3layouts agileits form">
+									<div class="ferry">
+										<label>From</label>
+										<select asp-for="FromId" asp-items="@(new SelectList(Model.Cities, "CityId", "CityName"))">
+											<option>Choose city</option>
+										</select>
+									</div>
+									<div class="ferry">
+										<label>To</label>
+										<select asp-for="ToId" asp-items="@(new SelectList(Model.Cities, "CityId", "CityName"))">
+											<option>Choose city</option>
+										</select>
+									</div>
+									<div >
+										<div>
+											<label>Departure</label>
+											<input class="departure" type="datetime-local" value="Choose date and time" asp-for="Departure" required=""/>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<div class="tickets">
+										<div class="persons">
+											<label>Number Of Place</label>
+											<input type="number" asp-for="NumberOfPlace" placeholder="1" required="">
+										</div>
+										<div class="vehicle">
+											<label>Airline</label>
+											<select asp-for="AirlineId" asp-items="@(new SelectList(Model.Airlines, "AirlineId", "AirlineName"))">
+												<option>Choose airline</option>
+											</select>
+										</div>
+										<div class="persons">
+											<label>Price</label>
+											<input type="number" asp-for="Price" placeholder="AZN" required="">
+										</div>
+										<div class="clear"></div>
+									</div>
+									<div class="wthreesubmitaits">
+										<input type="submit" name="submit" value="Add">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<!-- Necessary-JavaScript-Files-&-Links -->
+
+			<!-- Date-Picker-JavaScript -->
+				<script src="/js/AddTicket/jquery-ui.js"></script>
+				<script>
+					$(function() {
+						$( "#datepicker,#datepicker1,#datepicker2" ).datepicker();
+					});
+				</script>
+			<!-- //Date-Picker-JavaScript -->
+
+		<!-- //Necessary-JavaScript-Files-&-Links -->
+
+
+	</body>
+	<!-- //Body -->
+
+</html>

@@ -1,0 +1,29 @@
+﻿@model TicketViewModel
+
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%">
+<head>
+	<link rel="stylesheet" href="/css/ReserveTicket/details.css">
+	    <title>Passenger Details</title>
+</head>
+
+<body>
+  <div class="login-page">
+  <div class="form">
+          <h2>Details</h2>
+    <form asp-controller="Home" asp-action="ReserveTicket" method="post" class="login-form">
+      <input asp-for="@Model.Name" required type="text" placeholder="Name"/>
+      <input asp-for="@Model.Surname" required type="text" placeholder="Surname"/>
+      <input asp-for="@Model.FinCode" required type="text" placeholder="Fin Code"/>
+      <input asp-for="@Model.PhoneNumber" required type="number" placeholder="Phone Number"/>
+      <input asp-for="@Model.NumberOfPlace" required type="number" value="1" placeholder="Number of tickets"/>
+      <button type="submit" class="button-73" role="button">Sell</button>
+    </form>
+  </div>
+</div>
+
+  </body>
+</html>

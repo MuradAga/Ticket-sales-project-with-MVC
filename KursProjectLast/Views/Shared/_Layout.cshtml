@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    	        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/KursProjectLast.styles.css" asp-append-version="true" />
+    <style>
+        .fas {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+.fa-home:hover {
+                color: #344ceb;
+}
+        .nav-link {
+            width:10rem;
+        }
+        ul li a {
+            width: auto !important;
+        }
+        .nav-link:hover {
+            border-radius: 1rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: #0dd1c0 !important;
+}
+.hov {
+    font-size: 1.3rem;
+}
+.navbar {
+        background-color: #009DAE !important;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-home" style="font-size: 40px;"></i></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div style="padding: 0;" class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item hov">
+                            <a style="width: 173px !important;" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GoReserveTicketPanel"><i class="glyphicon glyphicon-pencil"></i> Reserve Ticket</a>
+                        </li>
+                        <li class="nav-item hov">
+                            <a style="width: 194px !important;" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GoReservedTicketsPanel"><i class="glyphicon glyphicon-check"></i> Reserved Tickets</a>
+                        </li>
+                        <li class="nav-item hov">
+                            <a style="width: 138px !important;" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GoFlightPanel"><i class="glyphicon glyphicon-ok"></i> Add Flight</a>
+                        </li>
+                        <li class="nav-item hov">
+                            <a style="width: 159px !important;" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="CovidDetails"><i class="glyphicon glyphicon-equalizer"></i> Covid19 Live</a>
+                        </li>
+                        <li class="nav-item">
+                            <label style="font-size: 30px;font-weight: 100;">@ViewData["Temperature"]</label>
+                        </li>
+                        <li class="nav-item">
+                            <label style="padding-left: 1rem;font-size: 20px;font-weight: 100;width: 135px;">@ViewData["Clouds"]</label>
+                        </li>
+                        <li class="nav-item">
+                            <img style="margin: 0;width: 50px;height: 50px;display: flex;border: 0;box-shadow: 0px 0px 0px;" src="/img/WeatherIcons/@ViewData["Icon"]" alt="Icon">
+                        </li>
+                        <li style="padding-left: 19rem;" class="nav-item hov">
+                            <a style="width: 3rem !important;font-size: 1.8rem;" class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout"><span class="glyphicon glyphicon-log-out"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

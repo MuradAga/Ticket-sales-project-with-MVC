@@ -1,0 +1,40 @@
+﻿@model List<FlightToListDTO>
+
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%">
+<head>
+    <title>Sell Ticket</title>
+	<link rel="stylesheet" href="/css/ReserveTicket/sellticket.css">
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+<div id="flights" class="flights-table">
+<table class="rwd-table">
+<tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Airline</th>
+    <th>Price</th>
+    <th>Departure</th>
+    <th>Number of vacancies</th>
+</tr>
+	@foreach (var item in Model)
+	{
+  <tr>
+    <td>@item.From.CityName</td>
+    <td>@item.To.CityName</td>
+    <td>@item.Airline.AirlineName</td>
+    <td>@item.Price AZN</td>
+    <td>@item.Departure</td>
+    <td>@item.NumberOfPlace</td>
+    <td>@Html.ActionLink("Sell", "SellTicket", "Home", new { id = item.FlightId}, new {@class = "btn btn-success", @type = "button"})</td>
+  </tr>
+	}
+</table>
+	</div>
+</body>
+</html>

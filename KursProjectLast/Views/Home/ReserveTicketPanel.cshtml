@@ -1,0 +1,44 @@
+﻿@model ReserveTicketViewModel
+
+@{
+	ViewData["Title"] = "Reserve ticket";
+	Layout = null;
+}
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%">
+<head>
+	<script src="/js/ReserveTicket/main.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="/css/ReserveTicket/style.css">
+	    <title>Find Tickets</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+	<form asp-controller="Home" asp-action="ShowFlights" method="post">
+		<div class="booking-form-box">
+
+		<div class="booking-form">
+			<label>From</label>
+			<select asp-for="@Model.FromId" asp-items="@(new SelectList(Model.Cities, "CityId", "CityName"))" class="custom-select form-control">
+				<option>Choose city</option>
+			</select>
+
+			<label>To</label>
+			<select asp-for="@Model.ToId" asp-items="@(new SelectList(Model.Cities, "CityId", "CityName"))" class="custom-select form-control">
+				<option>Choose city</option>
+			</select>
+
+			<div class="input-grp">
+			<label>Departing</label>
+			<input type="date" value="Choose date" asp-for="@Model.Departure" class="form-control select-date"/>
+			</div>
+
+			<div class="input-grp">
+			<button type="submit" class="btn btn-primary flight" style="margin-left: 5px">Show flights</button>
+			</div>
+
+		</div>
+	</div>
+	</form>
+</body>
+</html>
